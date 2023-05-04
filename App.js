@@ -1,13 +1,17 @@
 import React from "react";
 import Home from "./src/pages/Home";
-import Details from "./src/pages/Details";
 import Flexbox from "./src/pages/Flexbox";
-
+import IMC from "./src/pages/IMC";
+import Conversor from "./src/pages/Conversor";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Entypo } from "@expo/vector-icons";
+import {
+  Entypo,
+  MaterialIcons,
+  MaterialCommunityIcons,
+} from "@expo/vector-icons";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -15,6 +19,26 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator>
+      <Tab.Screen
+        name="Conversor"
+        component={Conversor}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="monetization-on" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="IMC"
+        component={IMC}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="arm-flex" color={color} size={size} />
+          ),
+        }}
+      />
       <Tab.Screen
         name="Home"
         component={Home}
@@ -25,16 +49,7 @@ function MyTabs() {
           ),
         }}
       />
-      <Tab.Screen
-        name="Details"
-        component={Details}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Entypo name="info-with-circle" color={color} size={size} />
-          ),
-        }}
-      />
+
       <Tab.Screen
         name="FlexBox"
         component={Flexbox}
@@ -51,8 +66,8 @@ function MyTabs() {
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Details">
-        <Stack.Screen name="Home" component={MyTabs} />
+      <Stack.Navigator initialRouteName="IMC">
+        <Stack.Screen name="IMC" component={MyTabs} />
       </Stack.Navigator>
     </NavigationContainer>
   );
