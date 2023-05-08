@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-} from "react-native";
+import { Input } from "../../Components/Input";
+import { Button } from "../../Components/Button";
+import { View, Text, StyleSheet } from "react-native";
 
 export default function Conversor() {
   const [msg, setMsg] = useState("");
@@ -34,27 +30,23 @@ export default function Conversor() {
   }
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.titulo}>Informe um Valor em Real:</Text>
-      <TextInput
+
+      <Input
         style={styles.textInput}
+        titulo="Informe um Valor em Real:"
         defaultValue={num}
-        placeholder="0,00 R$"
+        texto="0,00 R$"
         onChangeText={(num) => setNum(parseFloat(num))}
       />
 
       <Text style={styles.titulo}>Agora converta o valor</Text>
-      <TouchableOpacity onPress={() => dolarReal()}>
-        <Text style={styles.calcular}>Dolar EUA</Text>
-      </TouchableOpacity>
+      <Button onPress={() => dolarReal()} titulo="Dolar EUA" />
 
-      <TouchableOpacity onPress={() => euroReal()}>
-        <Text style={styles.calcular}>EURO</Text>
-      </TouchableOpacity>
+      <Button onPress={() => euroReal()} titulo="EURO" />
 
-      <TouchableOpacity onPress={() => yuanReal()}>
-        <Text style={styles.calcular}>Yuan</Text>
-      </TouchableOpacity>
+      <Button onPress={() => yuanReal()} titulo="Yuan" />
 
       <Text style={styles.resultado}>
         {Math.round(resultado).toFixed(2)}
@@ -65,99 +57,33 @@ export default function Conversor() {
 }
 
 const styles = StyleSheet.create({
-  container1: {
-    flex: 1,
-    display: "flex",
-    backgroundColor: "#000",
-    alignItems: "center",
-    justifyContent: "space-around",
-    width: "100%",
-    height: "70%",
-    opacity: 0.7,
-  },
   container: {
     flex: 1,
-    backgroundColor: "transparent",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    width: "100%",
-    height: "15%",
-  },
-  Image: {
-    flex: 0.3,
-    width: "100%",
-    height: "35%",
-    marginTop: "30%",
-    marginBottom: "29%",
-  },
-  flag: {
-    flex: 1,
     display: "flex",
-    position: "absolute",
-    marginTop: "6%",
-    marginLeft: "10%",
-    width: "20%",
-    height: "35%",
+    position: "relative",
+    backgroundColor: "#000",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    height: "100%",
+    opacity: 0.7,
   },
   resultado: {
+    display: "flex",
     fontSize: 30,
     fontFamily: "Arial",
     fontWeight: "bold",
-    lineHeight: 84,
+    lineHeight: 90,
     color: "#ffa500",
-    shadowColor: "#000",
-    borderColor: "#000",
     textAlign: "center",
-    marginLeft: "7%",
-    marginRight: "5%",
-    marginBottom: "10%",
     position: "relative",
   },
   titulo: {
     fontSize: 20,
     fontFamily: "Arial",
-    fontWeight: "100",
+    lineHeight: 90,
     color: "#fff",
-    borderColor: "#000",
     textAlign: "justify",
-    marginLeft: "7%",
-    marginRight: "5%",
     position: "relative",
-  },
-  textInput: {
-    fontSize: 30,
-    color: "#000f",
-    textAlign: "center",
-    backgroundColor: "#ffff",
-    borderBottomColor: "#000",
-    borderRadius: 15,
-    marginBottom: "5%",
-    shadowColor: "#000",
-  },
-  alignItem: {
-    alignItems: "stretch",
-    textAlign: "end",
-    marginBottom: "1%",
-    position: "end",
-    justifyContent: "flex-end",
-  },
-  bottom: {
-    fontSize: 30,
-    backgroundColor: "#ffa500",
-    borderRadius: 15,
-    textAlign: "center",
-    marginBottom: "5%",
-    marginTop: "5%",
-    width: "100%",
-  },
-  calcular: {
-    fontSize: 25,
-    backgroundColor: "#ffa500",
-    borderRadius: 10,
-    textAlign: "center",
-    marginTop: "5%",
-    marginBottom: "5%",
-    marginLeft: "5%",
-    width: "90%",
   },
 });

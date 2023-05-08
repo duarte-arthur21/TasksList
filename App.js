@@ -20,6 +20,16 @@ function MyTabs() {
   return (
     <Tab.Navigator>
       <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Entypo name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
         name="Conversor"
         component={Conversor}
         options={{
@@ -36,16 +46,6 @@ function MyTabs() {
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="arm-flex" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Entypo name="home" color={color} size={size} />
           ),
         }}
       />
@@ -66,8 +66,8 @@ function MyTabs() {
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="IMC">
-        <Stack.Screen name="IMC" component={MyTabs} />
+      <Stack.Navigator initialRouteName="home">
+        <Stack.Screen name="home" component={MyTabs} />
       </Stack.Navigator>
     </NavigationContainer>
   );

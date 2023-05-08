@@ -3,10 +3,11 @@ import { Text, TouchableOpacity } from "react-native";
 import { StyleSheet } from "react-native";
 
 function Button(props) {
-  console.log(props);
+  const { onPress, titulo } = props;
+
   return (
-    <TouchableOpacity onPress={props.onPress}>
-      <Text style={estilo.calcular}>{props.titulo}</Text>
+    <TouchableOpacity style={estilo.button} onPress={onPress}>
+      <Text>{titulo}</Text>
     </TouchableOpacity>
   );
 }
@@ -14,15 +15,16 @@ function Button(props) {
 export { Button };
 
 const estilo = StyleSheet.create({
-  calcular: {
-    fontSize: 25,
+  button: {
+    display: "flex",
+    position: "relative",
+    fontSize: 35,
     backgroundColor: "#FFD700",
     borderRadius: 10,
     textAlign: "center",
-    marginTop: "5px",
-    marginBottom: "5px",
-    marginLeft: "-15px",
-    position: "relative",
-    width: "150%",
+    justifyContent: "center",
+    marginBottom: 5,
+    width: 130,
+    height: 30,
   },
 });
