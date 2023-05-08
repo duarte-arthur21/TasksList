@@ -3,10 +3,21 @@ import { Text, TouchableOpacity } from "react-native";
 import { StyleSheet } from "react-native";
 
 function Button(props) {
-  const { onPress, titulo } = props;
+  const { onPress, titulo, variant } = props;
 
   return (
-    <TouchableOpacity style={estilo.button} onPress={onPress}>
+    <TouchableOpacity
+      style={[
+        styles.button,
+        variant === "primary" && styles.primaryButton,
+        variant === "secondary" && styles.secondaryButton,
+        variant === "sucess" && styles.SuccessButton,
+        variant === "danger" && styles.DangerButton,
+        variant === "dark" && styles.DarkButton,
+        variant === "info" && styles.infoButton,
+      ]}
+      onPress={onPress}
+    >
       <Text>{titulo}</Text>
     </TouchableOpacity>
   );
@@ -14,17 +25,37 @@ function Button(props) {
 
 export { Button };
 
-const estilo = StyleSheet.create({
+const styles = StyleSheet.create({
   button: {
     display: "flex",
     position: "relative",
     fontSize: 35,
-    backgroundColor: "#FFD700",
     borderRadius: 10,
     textAlign: "center",
     justifyContent: "center",
     marginBottom: 5,
     width: 130,
     height: 30,
+  },
+  primaryButton: {
+    backgroundColor: "blue",
+    color: "white",
+  },
+  secondaryButton: {
+    backgroundColor: "#c0c0c0",
+  },
+  SuccessButton: {
+    backgroundColor: "#008000",
+  },
+  DangerButton: {
+    backgroundColor: "#ff0000",
+  },
+  infoButton: {
+    backgroundColor: "#FFD700",
+    color: "white",
+  },
+  DarkButton: {
+    backgroundColor: "#000000",
+    color: "white",
   },
 });

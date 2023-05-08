@@ -57,8 +57,8 @@ export default function IMC({ navigation }) {
         onChangeText={(altura) => setAltura(parseFloat(altura))}
         texto="M*"
       />
-      <Button titulo="Calcular" onPress={() => Resultado()} />
-      <Button titulo="Limpar" onPress={() => limpar()} />
+      <Button titulo="Calcular" onPress={() => Resultado()} variant="info" />
+      <Button titulo="Limpar" onPress={() => limpar()} variant="secondary" />
       <Text style={styles.resultado}>
         {resultado}
         {mensagem}

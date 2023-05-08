@@ -40,7 +40,7 @@ export default function Home() {
           </p>
 
           <View style={styles.Container}>
-            <Button titulo={`${toggleValue}`} onPress={toggle} />
+            <Button titulo={`${toggleValue}`} onPress={toggle} variant="info" />
           </View>
         </View>
       </ImageBackground>

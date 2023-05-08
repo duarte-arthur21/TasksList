@@ -42,11 +42,11 @@ export default function Conversor() {
       />
 
       <Text style={styles.titulo}>Agora converta o valor</Text>
-      <Button onPress={() => dolarReal()} titulo="Dolar EUA" />
+      <Button onPress={() => dolarReal()} titulo="Dolar EUA" variant="sucess" />
 
-      <Button onPress={() => euroReal()} titulo="EURO" />
+      <Button onPress={() => euroReal()} titulo="EURO" variant="primary" />
 
-      <Button onPress={() => yuanReal()} titulo="Yuan" />
+      <Button onPress={() => yuanReal()} titulo="Yuan" variant="danger" />
 
       <Text style={styles.resultado}>
         {Math.round(resultado).toFixed(2)}
