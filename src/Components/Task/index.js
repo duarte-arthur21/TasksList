@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Switch, Text } from "react-native";
+import { View, Switch, Text, StyleSheet } from "react-native";
 
 function Task(props) {
   const { name, completed, onCompleted } = props;
@@ -10,7 +10,7 @@ function Task(props) {
   };
 
   return (
-    <View>
+    <View style={styles.Wrapper}>
       <Switch
         trackColor={{ false: "#767577", true: "#81b0ff" }}
         thumbColor={isChecked ? "#f5dd4b" : "#f4f3f4"}
@@ -26,3 +26,14 @@ function Task(props) {
 }
 
 export { Task };
+
+const styles = StyleSheet.create({
+  Wrapper: {
+    textAlign: "justify",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    position: "relative",
+    display: "flex",
+    flexDirection: "row",
+  },
+});

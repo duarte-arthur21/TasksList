@@ -22,22 +22,22 @@ function MyTabs() {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name="Lista"
-        component={TodoList}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome5 name="tasks" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tab.Screen
         name="Home"
         component={Home}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Entypo name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Lista"
+        component={TodoList}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome5 name="tasks" size={size} color={color} />
           ),
         }}
       />

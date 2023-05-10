@@ -23,15 +23,15 @@ export default function Home() {
           <View>
             <h3>Olá eu sou o Arthur Duarte! 👋</h3>
           </View>
-          <p style={{ padding: 10 }}>
+          <p style={{ padding: 5 }}>
             Cursando sexto semestre de Tecnologia em Sistemas para Internet,
             Técnico de Informática,🧑‍💻!
           </p>
-          <p style={{ padding: 10 }}>
+          <p style={{ padding: 5 }}>
             Tenho como objetivo entrar no mercado de trabalho como desenvolvedor
             Front-end
           </p>
-          <p style={{ padding: 10 }}>
+          <p style={{ padding: 5 }}>
             Atual faço parte do time de programadores front-end em formação pela
             Plural Systems!
           </p>
@@ -46,7 +46,6 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   Wrapper: {
-    flex: 1,
     display: "flex",
     alignItems: "center",
     textAlign: "center",
@@ -68,7 +67,7 @@ const styles = StyleSheet.create({
     width: 130,
     height: 130,
     borderRadius: 450,
-    padding: 1.5,
+    padding: 1,
     display: "flex",
   },
 });

@@ -17,8 +17,9 @@ function TodoList() {
   }
 
   function handleNewTaskSubmit() {
-    const newTasks = { task, completed: false };
+    const newTasks = { name: task, completed: false };
     setTasks([...tasks, newTasks]);
+    console.log("A nova tarefa é:", task);
   }
 
   return (
