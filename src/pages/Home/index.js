@@ -19,26 +19,22 @@ export default function Home() {
               style={styles.Perfil}
             />
           </View>
-
-          <h1>Hello World!</h1>
+          <h1 style={{ color: "#FFD700" }}>Hello World!</h1>
           <View>
             <h3>Olá eu sou o Arthur Duarte! 👋</h3>
           </View>
-          <p>
+          <p style={{ padding: 10 }}>
             Cursando sexto semestre de Tecnologia em Sistemas para Internet,
             Técnico de Informática,🧑‍💻!
           </p>
-
-          <p>
+          <p style={{ padding: 10 }}>
             Tenho como objetivo entrar no mercado de trabalho como desenvolvedor
             Front-end
           </p>
-
-          <p>
+          <p style={{ padding: 10 }}>
             Atual faço parte do time de programadores front-end em formação pela
             Plural Systems!
           </p>
-
           <View style={styles.Container}>
             <Button titulo={`${toggleValue}`} onPress={toggle} variant="info" />
           </View>

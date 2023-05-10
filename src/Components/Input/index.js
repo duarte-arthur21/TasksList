@@ -3,13 +3,14 @@ import { View, Text, TextInput } from "react-native";
 import { StyleSheet } from "react-native";
 
 function Input(props) {
+  const { titulo, texto, onChangeText } = props;
   return (
     <View>
-      <Text style={estilo.titulo}>{props.titulo}</Text>
+      <Text style={estilo.titulo}>{titulo}</Text>
       <TextInput
         style={estilo.textInput}
-        placeholder={props.texto}
-        onChangeText={props.onChangeText}
+        placeholder={texto}
+        onChangeText={onChangeText}
       />
     </View>
   );
