@@ -3,12 +3,17 @@ import { View, Text, TextInput } from "react-native";
 import { StyleSheet } from "react-native";
 
 function Input(props) {
-  const { titulo, texto, onChangeText } = props;
+  const { titulo, texto, onChangeText, value, variant } = props;
   return (
     <View>
       <Text style={estilo.titulo}>{titulo}</Text>
       <TextInput
-        style={estilo.textInput}
+        style={[
+          estilo.textInput,
+          variant === "primary" && estilo.primaryButton,
+          variant === "secondary" && estilo.secondaryButton,
+        ]}
+        value={value}
         placeholder={texto}
         onChangeText={onChangeText}
       />
@@ -20,6 +25,7 @@ export { Input };
 
 const estilo = StyleSheet.create({
   titulo: {
+    flex: 1,
     fontSize: 20,
     fontFamily: "Arial",
     fontWeight: "100",
@@ -33,11 +39,17 @@ const estilo = StyleSheet.create({
   },
   textInput: {
     fontSize: 20,
-    color: "#888888",
     textAlign: "center",
-    backgroundColor: "#D3D3D3",
     borderBottomColor: "#000",
     borderRadius: 15,
     marginBottom: "5%",
+  },
+  primaryButton: {
+    color: "#888888",
+    backgroundColor: "#D3D3D3",
+  },
+  secondaryButton: {
+    backgroundColor: "white",
+    borderStyle: "#000",
   },
 });

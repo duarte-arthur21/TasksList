@@ -4,6 +4,7 @@ import { AddTaskForm } from "../../Components/AddTaskForm";
 import { StyleSheet, View } from "react-native-web";
 
 function TodoList() {
+  const [textInput, setTextInput] = useState("Nome da tarefa");
   const [task, setTask] = useState("");
   const [tasks, setTasks] = useState([
     { name: "Comprar leite", completed: false },
@@ -19,6 +20,7 @@ function TodoList() {
   function handleNewTaskSubmit() {
     const newTasks = { name: task, completed: false };
     setTasks([...tasks, newTasks]);
+    setTextInput("Nome da tarefa");
     console.log("A nova tarefa é:", task);
   }
 
@@ -38,6 +40,7 @@ function TodoList() {
       <AddTaskForm
         onChangeText={setTask}
         value={task}
+        texto={textInput}
         onPress={handleNewTaskSubmit}
       />
     </View>

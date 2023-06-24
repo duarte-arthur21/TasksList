@@ -4,13 +4,13 @@ import { Button } from "../Button";
 import { Input } from "../Input";
 
 function AddTaskForm(props) {
-  const { onPress, value, onChangeText } = props;
+  const { onPress, value, onChangeText, texto } = props;
 
   return (
     <View>
       <Input
         titulo="Adicione uma nova tarefa"
-        texto="Nome da tarefa"
+        texto={texto}
         onChangeText={onChangeText}
         value={value}
       />

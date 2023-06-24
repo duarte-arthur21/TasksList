@@ -23,18 +23,22 @@ export default function Home() {
           <View>
             <h3>Olá eu sou o Arthur Duarte! 👋</h3>
           </View>
+
           <p style={{ padding: 5 }}>
             Cursando sexto semestre de Tecnologia em Sistemas para Internet,
             Técnico de Informática,🧑‍💻!
           </p>
+
           <p style={{ padding: 5 }}>
             Tenho como objetivo entrar no mercado de trabalho como desenvolvedor
             Front-end
           </p>
+
           <p style={{ padding: 5 }}>
             Atual faço parte do time de programadores front-end em formação pela
             Plural Systems!
           </p>
+
           <View style={styles.Container}>
             <Button titulo={`${toggleValue}`} onPress={toggle} variant="info" />
           </View>

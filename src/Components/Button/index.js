@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#c0c0c0",
   },
   SuccessButton: {
-    backgroundColor: "#008000",
+    backgroundColor: "rgba(85, 132, 122, 0.97)",
   },
   DangerButton: {
     backgroundColor: "#ff0000",
