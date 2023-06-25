@@ -1,33 +1,82 @@
-import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, View, Text, Alert } from "react-native";
 import { Button } from "../../Components/Button";
 import { Input } from "../../Components/Input";
+import { doc, setDoc, collection, addDoc } from "firebase/firestore";
+import { db } from "../../Components/config";
+import { Footer } from "./footer";
 
 export default function Register({ navigation }) {
-  const handleLogin = () => {
-    navigation.navigate("Dashboard");
-  };
-  const handleClick = () => {
-    navigation.navigate("Login");
-  };
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  function create() {
+    if (password === confirmPassword) {
+      addDoc(collection(db, "users"), {
+        email: email,
+        password: password,
+        username: username,
+      })
+        .then(() => {
+          console.log("Sucess");
+          navigation.navigate("Dashboard");
+        })
+        .catch((error) => {
+          console.log("Error: " + error);
+        });
+    } else {
+      Alert.alert("Senhas diferentes");
+    }
+  }
+
   return (
     <View style={styles.Wrapper}>
       <Text style={styles.titulo}>Crie sua Conta de Usuario!</Text>
 
-      <Input texto="Email" variant="secondary" />
-      <Input texto="Username" variant="secondary" />
-      <Input texto="Senha" variant="secondary" />
-      <Input texto="Confirme Senha" variant="secondary" />
+      <Input
+        value={email}
+        onChangeText={(email) => {
+          setEmail(email);
+        }}
+        texto="Email"
+        variant="secondary"
+        type="email"
+      />
 
-      <Button titulo="Cadastre-se" variant="sucess" onPress={handleLogin} />
+      <Input
+        value={username}
+        onChangeText={(username) => {
+          setUsername(username);
+        }}
+        texto="Username"
+        variant="secondary"
+      />
 
-      <View style={styles.container}>
-        <Text>Já possuí uma conta ?</Text>
-        <Text style={styles.link} onPress={handleClick}>
-          {" "}
-          Faça Login
-        </Text>
-      </View>
+      <Input
+        secureTextEntry
+        value={password}
+        onChangeText={(password) => {
+          setPassword(password);
+        }}
+        texto="Senha"
+        variant="secondary"
+      />
+
+      <Input
+        secureTextEntry
+        value={confirmPassword}
+        onChangeText={(confirmPassword) => {
+          setConfirmPassword(confirmPassword);
+        }}
+        texto="Confirme Senha"
+        variant="secondary"
+      />
+
+      <Button titulo="Cadastre-se" variant="sucess" onPress={create} />
+
+      <Footer />
     </View>
   );
 }
@@ -47,19 +96,5 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     fontFamily: "",
-  },
-  link: {
-    height: 74,
-    top: "600",
-    left: 65,
-    fontWeight: 500,
-    fontSize: 13,
-    alignItems: "center",
-    color: "rgba(85, 132, 122, 0.97)",
-  },
-  container: {
-    display: "flex",
-    flexDirection: "row",
-    marginTop: "30px",
   },
 });

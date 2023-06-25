@@ -3,7 +3,7 @@ import { View, Text, TextInput } from "react-native";
 import { StyleSheet } from "react-native";
 
 function Input(props) {
-  const { titulo, texto, onChangeText, value, variant } = props;
+  const { titulo, texto, onChangeText, value, variant, type } = props;
   return (
     <View>
       <Text style={estilo.titulo}>{titulo}</Text>
@@ -16,6 +16,7 @@ function Input(props) {
         value={value}
         placeholder={texto}
         onChangeText={onChangeText}
+        type={type}
       />
     </View>
   );
@@ -41,6 +42,7 @@ const estilo = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
     borderBottomColor: "#000",
+    placeholderTextColor: "#D3D3D3",
     borderRadius: 15,
     marginBottom: "5%",
   },
