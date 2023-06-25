@@ -5,6 +5,7 @@ import Conversor from "./src/pages/Conversor";
 import TodoList from "./src/pages/TodoList";
 import Login from "./src/pages/Login";
 import Register from "./src/pages/Register";
+import Profile from "./src/pages/Profile";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -54,6 +55,17 @@ function MyTabs() {
       <Tab.Screen
         name="IMC"
         component={IMC}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="arm-flex" color={color} size={size} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Perfil"
+        component={Profile}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
