@@ -28,7 +28,6 @@ export { Button };
 const styles = StyleSheet.create({
   button: {
     display: "flex",
-    position: "relative",
     fontSize: 35,
     borderRadius: 10,
     textAlign: "center",

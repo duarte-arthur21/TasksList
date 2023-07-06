@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { Button } from "../../Components/Button";
 import { Input } from "../../Components/Input";
+import { Header } from "./Header";
 
 export default function Login({ navigation }) {
   const handleLogin = () => {
@@ -12,7 +13,7 @@ export default function Login({ navigation }) {
   };
   return (
     <View style={styles.Wrapper}>
-      <Text style={styles.titulo}>Bem vindo!</Text>
+      <Header />
 
       <Input texto="Email" variant="secondary" />
       <Input texto="Senha" variant="secondary" />

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, Alert } from "react-native";
+import { StyleSheet, View, Alert } from "react-native";
 import { Button } from "../../Components/Button";
 import { Input } from "../../Components/Input";
-import { doc, setDoc, collection, addDoc } from "firebase/firestore";
+import { Header } from "./header";
+import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../Components/config";
 import { Footer } from "./footer";
 
@@ -33,7 +34,7 @@ export default function Register({ navigation }) {
 
   return (
     <View style={styles.Wrapper}>
-      <Text style={styles.titulo}>Crie sua Conta de Usuario!</Text>
+      <Header />
 
       <Input
         value={email}
@@ -89,12 +90,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "center",
     color: "#fff",
-  },
-  titulo: {
-    justifyContent: "flex-start",
-    alignItems: "center",
-    fontSize: 24,
-    fontWeight: "bold",
-    fontFamily: "",
   },
 });

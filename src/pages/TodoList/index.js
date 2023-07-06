@@ -6,11 +6,7 @@ import { StyleSheet, View } from "react-native-web";
 function TodoList() {
   const [textInput, setTextInput] = useState("Nome da tarefa");
   const [task, setTask] = useState("");
-  const [tasks, setTasks] = useState([
-    { name: "Comprar leite", completed: false },
-    { name: "Pagar a conta de luz", completed: false },
-    { name: "Ler um livro", completed: true },
-  ]);
+  const [tasks, setTasks] = useState("");
 
   function handleTaskCompletion(index) {
     const newTasks = [...tasks];
@@ -25,7 +21,7 @@ function TodoList() {
   }
 
   return (
-    <View style={styles.MyList}>
+    <View style={styles.Wrapper}>
       <ul>
         {tasks.map((task, index) => (
           <Task
@@ -50,7 +46,7 @@ function TodoList() {
 export default TodoList;
 
 const styles = StyleSheet.create({
-  MyList: {
+  Wrapper: {
     position: "relative",
     justifyContent: " center",
     textAlign: "center",
