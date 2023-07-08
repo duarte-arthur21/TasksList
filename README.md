@@ -11,9 +11,9 @@ A aplicação consiste em uma Lista de Tarefas onde o usario pode logar no siste
 
 ## Layout Mobile
 ![Layout Mobile](https://github.com/duarte-arthur21/TasksList/blob/main/assets/Imagem1.png)
-![Layout Mobile](https://github.com/duarte-arthur21/TasksList/tree/main/assets/Image2.png)
-![Layout Mobile](https://github.com/duarte-arthur21/TasksList/tree/main/assets/Image3.png)
-![Layout Mobile](https://github.com/duarte-arthur21/TasksList/tree/main/assets/Image4.png)
+![Layout Mobile](https://github.com/duarte-arthur21/TasksList/blob/main/assets/Imagem2.png)
+![Layout Mobile](https://github.com/duarte-arthur21/TasksList/blob/main/assets/Imagem3.png)
+![Layout Mobile](https://github.com/duarte-arthur21/TasksList/blob/main/assets/Imagem4.png)
 
 
 # Tecnologias utilizadas
