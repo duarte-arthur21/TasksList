@@ -10,7 +10,11 @@ A aplicação consiste em uma Lista de Tarefas onde o usario pode logar no siste
 
 
 ## Layout Mobile
-![Layout Mobile](https://github.com/duarte-arthur21/Conversor_moedas/blob/main/Mobile.png)
+![Layout Mobile](https://github.com/duarte-arthur21/TasksList/tree/main/assets/Image1.png)
+![Layout Mobile](https://github.com/duarte-arthur21/TasksList/tree/main/assets/Image2.png)
+![Layout Mobile](https://github.com/duarte-arthur21/TasksList/tree/main/assets/Image3.png)
+![Layout Mobile](https://github.com/duarte-arthur21/TasksList/tree/main/assets/Image4.png)
+
 
 # Tecnologias utilizadas
 ## Back end
