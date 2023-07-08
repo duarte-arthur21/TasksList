@@ -47,16 +47,16 @@ executar o seguinte comando:
 
 ```bash
 # clonar repositório
-git clone https://github.com/duarte-arthur21/Conversor_moedas.git
+git clone https://github.com/duarte-arthur21/TasksList
 
 ```
 
 ```bash
 # Entre na Pasta do projeto
-No cmd excute: cd Conversor_moedas
+No cmd excute: cd TasksList
 
 # Execute o Projeto
-No cmd excute: expo start
+No cmd excute: npm start
 
 ```
 
