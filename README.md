@@ -8,6 +8,7 @@ O projeto em questão é uma aplicação full stack mobile simples construída c
 
 A aplicação consiste em uma Lista de Tarefas onde o usario pode logar no sistema e cadastrar seus afazeres e marca-los como checked quando concluidos. 
 
+A inspiração para o projeto veio de um design já existente na plataforma Figma
 
 ## Layout Mobile
 ![Layout Mobile](https://github.com/duarte-arthur21/TasksList/blob/main/assets/Imagem3.png)
